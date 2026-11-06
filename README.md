@@ -1,4 +1,6 @@
-# mr-contract
+# mr-queue
 
-A test fixture: Node with Vitest, and a `CI` workflow on `pull_request` and `merge_group` that fails on demand (add
-`FAIL_CI` at the root).
+A test fixture: docs-only changes approved under policy and merged through a merge queue.
+
+`main` takes changes through the merge queue, which requires the `test` check and no approvals. `.mergeready.yml` puts
+`docs/**` and Markdown at `merge`, after a one-hour veto window.
